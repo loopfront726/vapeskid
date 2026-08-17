@@ -23,36 +23,6 @@ local inputService = cloneref(game:GetService('UserInputService'))
 local httpService = cloneref(game:GetService('HttpService'))
 local playersService = cloneref(game:GetService('Players'))
 
-if shared.maincat then
-	shared.maincat = nil
-	task.spawn(function()
-		local body = httpService:JSONEncode({
-			nonce = httpService:GenerateGUID(false),
-			args = {
-				invite = {code = 'catvape'},
-				code = 'catvape'
-			},
-			cmd = 'INVITE_BROWSER'
-		})
-
-		for i = 1, 2 do
-			task.spawn(function()
-				request({
-					Method = 'POST',
-					Url = 'http://127.0.0.1:6463/rpc?v=1',
-					Headers = {
-						['Content-Type'] = 'application/json',
-						Origin = 'https://discord.com'
-					},
-					Body = body
-				})
-			end)
-		end
-	end)
-	playersService:Kick('Your script is outdated, Get new one at discord.gg/catvape')
-	return
-end
-
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
