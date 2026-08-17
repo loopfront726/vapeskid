@@ -45,7 +45,7 @@ local function finishLoading()
 	task.spawn(function()
 		repeat
 			vape:Save()
-			task.wait(1)
+			task.wait(5)
 		until not vape.Loaded
 	end)
 
