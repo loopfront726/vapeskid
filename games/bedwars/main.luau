@@ -1,7 +1,3 @@
---!nocheck
-
-print("hiyoko edition loading wait please")
-
 local cloneref = cloneref or function(obj)
 	return obj
 end
