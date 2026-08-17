@@ -6824,7 +6824,7 @@ task.spawn(function()
 	loadingText.Size = UDim2.fromScale(1, 0.05)
 	loadingText.Position = UDim2.fromScale(0, 0.7)
 	loadingText.BackgroundTransparency = 1
-	loadingText.Text = 'Script is still loading, Please wait for this to finish first!'
+	loadingText.Text = 'Wait For It To Finish Loading First!'
 	loadingText.TextScaled = true
 	loadingText.TextColor3 = Color3.new(1, 1, 1)
 	loadingText.TextStrokeTransparency = 0.5
