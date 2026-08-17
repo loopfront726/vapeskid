@@ -6834,7 +6834,7 @@ task.spawn(function()
 	repeat
 		task.wait()
 	until mainapi.Loaded
-	loadingText.Text = 'Thank you for choosing Cat Vape!\nScript is fully loaded'
+	loadingText.Text = 'Thank you for choosing our script!'
 end)
 
 mainapi:Clean(gui:GetPropertyChangedSignal('AbsoluteSize'):Connect(function()
