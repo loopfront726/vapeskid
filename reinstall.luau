@@ -2,8 +2,8 @@ local cloneref = cloneref or function(ref: any)
     return ref
 end
 
-if isfolder('catrewrite') then
-    delfolder('catrewrite')
+if isfolder('vapeskid') then
+    delfolder('vapeskid')
 end
 
 cloneref(game:GetService('StarterGui')):SetCore('SendNotification', {

@@ -91,7 +91,7 @@ local function addBlur(parent)
 	blur.Size = UDim2.new(1, 89, 1, 52)
 	blur.Position = UDim2.fromOffset(-48, -31)
 	blur.BackgroundTransparency = 1
-	blur.Image = getcustomasset('catrewrite/assets/new/blur.png')
+	blur.Image = getcustomasset('vapeskid/assets/new/blur.png')
 	blur.ScaleType = Enum.ScaleType.Slice
 	blur.SliceCenter = Rect.new(52, 31, 261, 502)
 	blur.Parent = parent
@@ -746,7 +746,7 @@ entitylib.start()
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/MaxlaserTech/CatV6/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/MaxlaserTech/CatV6/'..readfile('vapeskid/profiles/commit.txt')..'/'..select(1, path:gsub('vapeskid/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			return
@@ -759,7 +759,7 @@ local function downloadFile(path, func)
 	return (func or readfile)(path)
 end
 
-local Packages = httpService:JSONDecode(downloadFile('catrewrite/profiles/packages.json'))
+local Packages = httpService:JSONDecode(downloadFile('vapeskid/profiles/packages.json'))
 local debug = debug
 local require = require
 
@@ -780,7 +780,7 @@ run(function()
 			end
 		})
 
-		vape.Libraries.cheatenginelib = loadstring(downloadFile('catrewrite/games/bedwars/engine.luau'))(vape, vapeEvents, entitylib, store, bedwars)
+		vape.Libraries.cheatenginelib = loadstring(downloadFile('vapeskid/games/bedwars/engine.luau'))(vape, vapeEvents, entitylib, store, bedwars)
 	end
 end)
 
@@ -4033,7 +4033,7 @@ run(function()
 				end
 			end)
 		end,
-		catrewrite = function(_, _, dir)
+		vapeskid = function(_, _, dir)
 			LongJump:Clean(vapeEvents.CatPounce.Event:Connect(function()
 				JumpSpeed = 4 * Value.Value
 				JumpTick = tick() + 2.5
@@ -6302,7 +6302,7 @@ run(function()
 				bedwars.BlockKickerKitController.getKickBlockProjectileOriginPosition = old
 			end)
 		end,
-		catrewrite = function()
+		vapeskid = function()
 			local old = bedwars.CatController.leap
 			bedwars.CatController.leap = function(...)
 				vapeEvents.CatPounce:Fire()
@@ -9563,7 +9563,7 @@ run(function()
 		close.Position = UDim2.new(1, -35, 0, 9)
 		close.BackgroundColor3 = Color3.new(1, 1, 1)
 		close.BackgroundTransparency = 1
-		close.Image = getcustomasset('catrewrite/assets/new/close.png')
+		close.Image = getcustomasset('vapeskid/assets/new/close.png')
 		close.ImageColor3 = color.Light(uipallet.Text, 0.2)
 		close.ImageTransparency = 0.5
 		close.AutoButtonColor = false
@@ -9677,7 +9677,7 @@ run(function()
 		searchicon.Size = UDim2.fromOffset(14, 14)
 		searchicon.Position = UDim2.new(1, -26, 0, 8)
 		searchicon.BackgroundTransparency = 1
-		searchicon.Image = getcustomasset('catrewrite/assets/new/search.png')
+		searchicon.Image = getcustomasset('vapeskid/assets/new/search.png')
 		searchicon.ImageColor3 = color.Light(uipallet.Main, 0.37)
 		searchicon.Parent = searchbkg
 		local children = Instance.new('ScrollingFrame')
@@ -9818,7 +9818,7 @@ run(function()
 		textbuttonicon.Position = UDim2.fromScale(0.5, 0.5)
 		textbuttonicon.AnchorPoint = Vector2.new(0.5, 0.5)
 		textbuttonicon.BackgroundTransparency = 1
-		textbuttonicon.Image = getcustomasset('catrewrite/assets/new/add.png')
+		textbuttonicon.Image = getcustomasset('vapeskid/assets/new/add.png')
 		textbuttonicon.ImageColor3 = Color3.fromHSV(0.46, 0.96, 0.52)
 		textbuttonicon.Parent = textbutton
 		local childrenlist = Instance.new('Frame')
@@ -9911,7 +9911,7 @@ run(function()
 			close.Position = UDim2.new(1, -23, 0, 6)
 			close.BackgroundColor3 = Color3.new(1, 1, 1)
 			close.BackgroundTransparency = 1
-			close.Image = getcustomasset('catrewrite/assets/new/closemini.png')
+			close.Image = getcustomasset('vapeskid/assets/new/closemini.png')
 			close.ImageColor3 = color.Light(uipallet.Text, 0.2)
 			close.ImageTransparency = 0.5
 			close.AutoButtonColor = false

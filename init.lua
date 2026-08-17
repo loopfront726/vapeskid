@@ -22,7 +22,7 @@ local function downloadFile(path, func)
 	if not isfile(path) then
 		downloader.Text = 'Downloading '.. path
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/HiyokoPVp/DOGVAPE/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/loopfront726/vapeskid/'..readfile('vapeskid/profiles/commit.txt')..'/'..select(1, path:gsub('vapeskid/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -50,7 +50,7 @@ local function wipeFolder(path)
 end
 
 
-for _, folder in {'catrewrite', 'catrewrite/games', 'catrewrite/profiles', 'catrewrite/assets', 'catrewrite/libraries', 'catrewrite/guis'} do
+for _, folder in {'vapeskid', 'vapeskid/games', 'vapeskid/profiles', 'vapeskid/assets', 'vapeskid/libraries', 'vapeskid/guis'} do
 	if not isfolder(folder) then
 		downloader.Text = 'Downloading '.. folder
 		makefolder(folder)
@@ -59,21 +59,21 @@ end
 
 if not shared.VapeDeveloper then
 	local _, subbed = pcall(function() 
-		return game:HttpGet('https://github.com/HiyokoPVp/DOGVAPE') 
+		return game:HttpGet('https://github.com/loopfront726/vapeskid') 
 	end)
 	local commit = subbed:find('currentOid')
 	commit = commit and subbed:sub(commit + 13, commit + 52) or nil
 	commit = commit and #commit == 40 and commit or 'main'
-	if commit == 'main' or (isfile('catrewrite/profiles/commit.txt') and readfile('catrewrite/profiles/commit.txt') or '') ~= commit then
-		if commit ~= 'main' and isfile('catrewrite/profiles/commit.txt') then
-			shared.updated = readfile('catrewrite/profiles/commit.txt')
+	if commit == 'main' or (isfile('vapeskid/profiles/commit.txt') and readfile('vapeskid/profiles/commit.txt') or '') ~= commit then
+		if commit ~= 'main' and isfile('vapeskid/profiles/commit.txt') then
+			shared.updated = readfile('vapeskid/profiles/commit.txt')
 		end
-		wipeFolder('catrewrite')
-		wipeFolder('catrewrite/games')
-		wipeFolder('catrewrite/guis')
-		wipeFolder('catrewrite/libraries')
+		wipeFolder('vapeskid')
+		wipeFolder('vapeskid/games')
+		wipeFolder('vapeskid/guis')
+		wipeFolder('vapeskid/libraries')
 	end
-	writefile('catrewrite/profiles/commit.txt', commit)
+	writefile('vapeskid/profiles/commit.txt', commit)
 end
 
-return loadstring(downloadFile('catrewrite/main.lua'), 'main')()
+return loadstring(downloadFile('vapeskid/main.lua'), 'main')()
