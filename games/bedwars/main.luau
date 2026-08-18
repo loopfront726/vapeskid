@@ -3092,7 +3092,6 @@ run(function() --> by max
 	local Priority
 	local SwingRange
 	local AttackRange
-	local Hitreg
 	local SyncHitTime
 	local ChargeTime
 	local AirChance
@@ -3605,17 +3604,6 @@ run(function() --> by max
 		Suffix = function(val)
 			return val == 1 and 'stud' or 'studs'
 		end
-	})
-	Hitreg = Killaura:CreateSlider({
-		Name = 'Hitreg',
-		Min = 1,
-		Max = 36,
-		Default = 36,
-		Decimal = 10,
-		Suffix = function(val)
-			return val == 1 and 'stud' or 'studs'
-		end,
-		Tooltip = 'Controls the validation reach used for hits. Values below 36 delay synced hit packets.'
 	})
 	ChargeTime = Killaura:CreateSlider({
 		Name = 'Swing time',
