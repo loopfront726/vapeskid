@@ -45,7 +45,7 @@ local function finishLoading()
 	task.spawn(function()
 		repeat
 			vape:Save()
-			task.wait(5)
+			task.wait(1)
 		until not vape.Loaded
 	end)
 
@@ -102,7 +102,7 @@ local function finishLoading()
 	end
 	if vape.Categories.Main.Options['GUI bind indicator'].Enabled then
 		vape:CreateNotification('Cat', 'Authenticated as '.. (getgenv().catname or 'Guest').. ' with ('.. (getgenv().catrole or 'Free').. ')', 4, 'info')
-		task.wait(4)
+		task.wait(2)
 		vape:CreateNotification('Finished Loading', not inputService.KeyboardEnabled and vape.VapeButton and 'Press the button in the top right to open GUI' or 'Press '..table.concat(vape.Keybind, ' + '):upper()..' to open GUI', 5)
 	end
 end
