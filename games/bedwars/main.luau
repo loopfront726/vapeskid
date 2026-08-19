@@ -3548,7 +3548,7 @@ run(function()
 		["Name"] = 'Killaura',
 		["Function"] = function(callback: boolean): void
 			if callback then
-				lastAttackTime = 0.05
+				lastAttackTime = 0
 				if inputService.TouchEnabled then
 					pcall(function()
 						lplr.PlayerGui.MobileUI['2'].Visible = Limit.Enabled
